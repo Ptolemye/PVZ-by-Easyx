@@ -136,14 +136,19 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Map_draw.h" />
     <ClInclude Include="Mouse_control.h" />
+    <ClInclude Include="Pea.h" />
     <ClInclude Include="Peashooter.h" />
     <ClInclude Include="Plant.h" />
     <ClInclude Include="Plant_draw.h" />
     <ClInclude Include="Plant_sow.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Sunflower.h" />
+    <ClInclude Include="Sun.h" />
+    <ClInclude Include="Update.h" />
     <ClInclude Include="variable_setup.h" />
     <ClInclude Include="Wallnut.h" />
+    <ClInclude Include="Zombie.h" />
+    <ClInclude Include="Zombie_draw.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,13 +6,19 @@ class Sunflower:public Plant
 private:
 	IMAGE im_sunflower[9];
 	IMAGE to_plant;
+	DWORD produce_t1;
+	DWORD produce_t2;
 public:
 	Sunflower(int row,int col) :Plant(row,col) {
 		type = 1;
-		HP = 10;
+		HP = 100;
 		cost = 50;
+		cold_time = 5;
+		cold_count = 5;
+		ready_to_plant = true;
 		draw_step = 1;
 		draw_t1 = GetTickCount();
+		produce_t1 = GetTickCount();
 	}
 	//设置图像
 	void Set_image() {
@@ -38,6 +44,15 @@ public:
 	}
 	void to_plant_draw() {
 		putimagePng(start_x + col * LENGTH, start_y + row * WIDTH, &to_plant);
+	}
+	//生产阳光
+	bool produce_sun() {
+		produce_t2 = GetTickCount();
+		if (produce_t2 - produce_t1 > 15000) {
+			produce_t1 = produce_t2;
+			return true;
+		}
+		else return false;
 	}
 };
 

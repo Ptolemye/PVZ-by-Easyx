@@ -4,16 +4,21 @@
 #include"Plant.h"
 class Peashooter:public Plant {
 private:
-	IMAGE im_peashooter[10];
+	IMAGE im_peashooter[12];
 	IMAGE to_plant;
-	IMAGE shooting[5];
 public:
 	DWORD shoot_t1;
 	DWORD shoot_t2;
+	int shoot_step = 1;
+	bool is_shooting = false;
+	bool reload_over = false;
 	Peashooter(int row, int col) :Plant(row, col) {
 		type = 2;
-		HP = 10;
+		HP = 100;
 		draw_step = 1;
+		cold_count = 1;
+		cold_time = 1;
+		ready_to_plant = true;
 		cost = 100;
 		draw_t1 = GetTickCount();
 		shoot_t1 = GetTickCount();
@@ -26,6 +31,8 @@ public:
 			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Peashooter\\image%d.png"), i);
 			loadimage(&im_peashooter[i], filename);
 		}
+		loadimage(&im_peashooter[9], _T("D:\\PVZ\\PVZ\\image\\Peashooter\\shoot1.png"));
+		loadimage(&im_peashooter[10], _T("D:\\PVZ\\PVZ\\image\\Peashooter\\shoot2.png"));
 		_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Peashooter\\to_plant.png"));
 		loadimage(&to_plant, filename);
 	}
@@ -38,7 +45,11 @@ public:
 			draw_step++;
 			draw_t1 = draw_t2;
 		}
-		if (draw_step == 9)draw_step = 1;
+		if (draw_step == 9&&!is_shooting)draw_step = 1;
+		if (draw_step == 11) {
+			draw_step = 1;
+			reload_over = true;
+		}
 	}
 	void to_plant_draw() {
 		putimagePng(start_x + col * LENGTH, start_y + row * WIDTH, &to_plant);

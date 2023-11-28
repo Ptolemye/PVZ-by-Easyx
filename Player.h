@@ -10,7 +10,7 @@ private:
 	int y;
 	MOUSEMSG m;
 public:
-	int money = 500;
+	int money = 100;
 	//Ë¢ÐÂÎ»ÖÃ×ø±ê
 	void fresh_mouse_location() {
 		if (MouseHit()) {

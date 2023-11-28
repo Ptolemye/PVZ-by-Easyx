@@ -30,13 +30,14 @@ public:
 		return (y - start_y) / WIDTH;
 	}
 	int get_box_col(int x,int y) {
-		return (x - start_x) / LENGTH;
 		if (x - start_x < 0)return -1;
+		return (x - start_x) / LENGTH;
 	}
 	void box_set(int row,int col,int type) {
 		box[row][col] = type;
 	}
 	int box_get(int row, int col) {
+		if (!in_box(row, col))return 0;
 		return box[row][col];
 	}
 	bool is_box_planted(int row,int col) {

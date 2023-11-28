@@ -62,5 +62,20 @@
     <ClInclude Include="Wallnut.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Update.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie_draw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sun.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Pea.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
