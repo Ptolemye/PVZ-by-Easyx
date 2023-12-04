@@ -129,12 +129,17 @@
   <ItemGroup>
     <ClCompile Include="initiallizer.h" />
     <ClCompile Include="PVZ.cpp" />
+    <ClCompile Include="Watermelon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Buckedhead_Zombie.h" />
     <ClInclude Include="Card_list.h" />
     <ClInclude Include="Card_list_draw.h" />
+    <ClInclude Include="Conehead_Zombie.h" />
+    <ClInclude Include="Double_Peashooter.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Map_draw.h" />
+    <ClInclude Include="Melon.h" />
     <ClInclude Include="Mouse_control.h" />
     <ClInclude Include="Pea.h" />
     <ClInclude Include="Peashooter.h" />
@@ -142,6 +147,7 @@
     <ClInclude Include="Plant_draw.h" />
     <ClInclude Include="Plant_sow.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Potato.h" />
     <ClInclude Include="Sunflower.h" />
     <ClInclude Include="Sun.h" />
     <ClInclude Include="Update.h" />

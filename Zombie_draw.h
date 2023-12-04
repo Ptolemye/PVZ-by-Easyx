@@ -1,11 +1,11 @@
 #pragma once
 #include"variable_setup.h"
 template<typename T>
-void Zombie_draw_help(std::list<T>& obj_list) {
+void Zombie_draw_help(std::list<T>& obj_list,int i) {
 	for (auto& p : obj_list) {
-		if (p.path == 0)p.draw();
+		if (p.path == i)p.draw();
 	}
-	for (auto& p : obj_list) {
+	/*for (auto& p : obj_list) {
 		if (p.path == 1)p.draw();
 	}
 	for (auto& p : obj_list) {
@@ -16,8 +16,12 @@ void Zombie_draw_help(std::list<T>& obj_list) {
 	}
 	for (auto& p : obj_list) {
 		if (p.path == 4)p.draw();
-	}
+	}*/
 }
 void Zombie_draw() {
-	Zombie_draw_help(zombie_list);
+	for (int i = 0; i < 5; i++) {
+		Zombie_draw_help(zombie_list,i);
+		Zombie_draw_help(conehead_zombie_list,i);
+		Zombie_draw_help(bucked_zombie_list, i);
+	}
 }

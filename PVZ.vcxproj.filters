@@ -21,6 +21,9 @@
     <ClCompile Include="initiallizer.h">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="Watermelon.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Map.h">
@@ -75,6 +78,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Pea.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Conehead_Zombie.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Buckedhead_Zombie.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Double_Peashooter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Potato.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Melon.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,6 +14,9 @@ void Card_list_draw() {
 	Card_list_draw_help(1, sunflower_function);
 	Card_list_draw_help(2,Peashooter_function);
 	Card_list_draw_help(3, wallnut_function);
+	Card_list_draw_help(4, double_peashooter_function);
+	Card_list_draw_help(5, potato_function);
+	Card_list_draw_help(6, watermelon_function);
 	//¿îÑ¡Ä£¿é
 	if (Get_card() >= 0) {
 		rectangle(69 + 70 * Get_card(), 2, 69 + 70 * (Get_card() + 1), 72);

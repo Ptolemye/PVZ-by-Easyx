@@ -38,8 +38,11 @@ void Plant_sow(int type) {
 		if (type == 1)to_plant_draw<Sunflower>(row, col);
 		if (type == 2)to_plant_draw<Peashooter>(row, col);
 		if (type == 3)to_plant_draw<Wallnut>(row, col);
+		if (type == 4)to_plant_draw<Double_Peashooter>(row, col);
+		if (type == 5)to_plant_draw<Potato>(row, col);
+		if (type == 6)to_plant_draw<Watermelon>(row, col);
 	}
-	if (type == 6)putimagePng(x-30, y-60, &cardlist.im_sf1[6]);
+	if (type == 8)putimagePng(x-30, y-60, &cardlist.im_sf1[8]);
 	if (player.if_click()) {
 		//确定地图上未被种植，且鼠标在草坪内
 		if (!map.is_box_planted(row, col)&&map.in_box(row,col)) {
@@ -58,14 +61,32 @@ void Plant_sow(int type) {
 				Plant_help(row, col, 3, wallnut_list);
 				wallnut_function.ready_to_plant = false;
 			}
+			//种植双发射手
+			if (type == 4 && player.money >= 200 && double_peashooter_function.ready_to_plant) {
+				Plant_help(row, col, 4, double_peashooter_list);
+				double_peashooter_function.ready_to_plant = false;
+			}
+			//种植土豆
+			if (type == 5 && player.money >= 25 && potato_function.ready_to_plant) {
+				Plant_help(row, col, 5, potato_list);
+				potato_function.ready_to_plant = false;
+			}
+			//种植西瓜
+			if (type == 6 && player.money >= 300 && watermelon_function.ready_to_plant) {
+				Plant_help(row, col, 6, watermelon_list);
+				watermelon_function.ready_to_plant = false;
+			}
 		}
 		//去除植物
-		if (type == 6) {
+		if (type == 8) {
 			if (map.is_box_planted(row, col) && map.in_box(row, col)) {
 				int temp_type = map.box_get(row, col);
 				if (temp_type == 1)abolish_help(row,col,sunflower_list);
 				if (temp_type == 2)abolish_help(row,col,peashooter_list);
 				if(temp_type == 3)abolish_help(row, col, wallnut_list);
+				if (temp_type == 4)abolish_help(row, col, double_peashooter_list);
+				if (temp_type == 5)abolish_help(row, col, potato_list);
+				if (temp_type == 6)abolish_help(row, col, watermelon_list);
 			}
 		}
 		//拾取阳光
@@ -76,6 +97,7 @@ void Plant_sow(int type) {
 			if (mouse_x > p->x && mouse_x< p->x + 40 && mouse_y > p->y && mouse_y < p->y + 40) {
 				sun_list.erase(p++);
 				player.money += 25;
+				player.fresh_mouse_location();
 			}
 			else p++;
 		}

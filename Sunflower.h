@@ -48,7 +48,7 @@ public:
 	//Éú²úÑô¹â
 	bool produce_sun() {
 		produce_t2 = GetTickCount();
-		if (produce_t2 - produce_t1 > 15000) {
+		if (produce_t2 - produce_t1 > 5000) {
 			produce_t1 = produce_t2;
 			return true;
 		}

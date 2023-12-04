@@ -7,6 +7,8 @@ inline void initiallizer() {
 	map.Set_image();
 	cardlist.Set_image();
 	Zombie::Set_image();
+	Conehead_Zombie::Set_image();
+	Buckedhead_Zombie::Set_image();
 	Sun::Set_image();
 }
 #endif

@@ -12,17 +12,21 @@
 class Map {
 private:
 	IMAGE im_map;
-	IMAGE im_table;
+	IMAGE im_table1;
+	IMAGE im_table2;
 	int box[5][9] = { 0 };
 public:
 	Map(){}
 	void Set_image() {
 		loadimage(&im_map, L"image\\Map\\bk1.png");
-		loadimage(&im_table, L"image\\Map\\table.png");
+		loadimage(&im_table1, L"image\\Map\\table.png");
+		loadimage(&im_table2, L"image\\Map\\table2.png");
 	}
 	void draw(){
 		putimage(0, 0, &im_map);
-		putimage(0, 0, &im_table);
+		putimage(0, 0, &im_table1);
+		putimage(430, 0, &im_table2);
+
 	}
 	//·½¿é¶¨Î»
 	int get_box_row(int x,int y) {

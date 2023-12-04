@@ -10,11 +10,13 @@ public:
 		loadimage(&im_sf1[1], L"image\\Card\\SF_card1.png");
 		loadimage(&im_sf1[2], L"image\\Card\\Peashooter_card1.png");
 		loadimage(&im_sf1[3], L"image\\Card\\Wallnut_card1.png");
-		loadimage(&im_sf2[3], L"image\\Card\\Wallnut_card2.png");
-		loadimage(&im_sf1[6], L"image\\Card\\R.png");
+		loadimage(&im_sf1[4], L"image\\Card\\Double_Peashooter_card.png");
+		loadimage(&im_sf1[5], L"image\\Card\\Potato_card.png");
+		loadimage(&im_sf1[6], L"image\\Card\\Watermelon_card.png");
+		loadimage(&im_sf1[8], L"image\\Card\\R.png");
 	}
 	void draw1() {
-		for (int i = 1; i < 7; i++) {
+		for (int i = 1; i < 9; i++) {
 			putimagePng(70 + 70 * (i - 1), 5, &im_sf1[i]);
 		}
 	}
