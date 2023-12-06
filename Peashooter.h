@@ -14,10 +14,10 @@ public:
 	bool reload_over = false;
 	Peashooter(int row, int col) :Plant(row, col) {
 		type = 2;
-		HP = 100;
+		HP = 200;
 		draw_step = 1;
-		cold_count = 1;
-		cold_time = 1;
+		cold_count = 5;
+		cold_time = 5;
 		ready_to_plant = true;
 		cost = 100;
 		draw_t1 = GetTickCount();

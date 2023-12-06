@@ -10,5 +10,11 @@ inline void initiallizer() {
 	Conehead_Zombie::Set_image();
 	Buckedhead_Zombie::Set_image();
 	Sun::Set_image();
+	loadimage(&im_start, _T("image\\Map\\R.png"));
+	loadimage(&button, _T("image\\Map\\button.png"));
+	loadimage(&im_txt, _T("image\\Map\\text.png"));
+	loadimage(&game_lost, _T("image\\Map\\end.png"));
+	loadimage(&head, _T("image\\Map\\head.png"));
+	loadimage(&game_win, _T("image\\Map\\success.png"));
 }
 #endif

@@ -18,7 +18,7 @@ public:
 	Potato(int row, int col) :Plant(row, col) {
 		type = 5;
 		HP = 100;
-		cost = 50;
+		cost = 25;
 		cold_time = 5;
 		cold_count = 5;
 		ready_to_plant = true;

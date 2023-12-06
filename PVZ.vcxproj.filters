@@ -95,5 +95,26 @@
     <ClInclude Include="Melon.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Bullet_draw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="round1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="round2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="round3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Start.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="end_draw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Second_count.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

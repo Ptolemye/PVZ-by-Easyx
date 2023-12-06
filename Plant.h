@@ -29,6 +29,10 @@ public:
 		return cost;
 	}
 	void colding() {
+		if (cold_count == 0) {
+			ready_to_plant = true;
+			cold_count = cold_time;
+		}
 		if (!ready_to_plant) {
 			cold_t2 = GetTickCount();
 			if (cold_t2 - cold_t1 > 1000) {
@@ -39,10 +43,6 @@ public:
 		else {
 			cold_t1 = GetTickCount();
 			cold_t2 = GetTickCount();
-		}
-		if (cold_count == 0) {
-			ready_to_plant = true;
-			cold_count = cold_time;
 		}
 	}
 };

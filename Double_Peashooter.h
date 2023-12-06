@@ -28,12 +28,12 @@ public:
 		TCHAR filename[80];
 		for (int i = 1; i < 6; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Double_peashooter\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Double_peashooter\\image%d.png"), i);
 			loadimage(&im_peashooter[i], filename);
 		}
-		loadimage(&im_peashooter[6], _T("D:\\PVZ\\PVZ\\image\\Double_peashooter\\shoot1.png"));
-		loadimage(&im_peashooter[7], _T("D:\\PVZ\\PVZ\\image\\Double_peashooter\\shoot2.png"));
-		_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Double_peashooter\\to_plant.png"));
+		loadimage(&im_peashooter[6], _T("image\\Double_peashooter\\shoot1.png"));
+		loadimage(&im_peashooter[7], _T("image\\Double_peashooter\\shoot2.png"));
+		_stprintf_s(filename, _T("image\\Double_peashooter\\to_plant.png"));
 		loadimage(&to_plant, filename);
 	}
 	//¶¯»­Ð§¹û

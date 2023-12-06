@@ -133,10 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buckedhead_Zombie.h" />
+    <ClInclude Include="Bullet_draw.h" />
     <ClInclude Include="Card_list.h" />
     <ClInclude Include="Card_list_draw.h" />
     <ClInclude Include="Conehead_Zombie.h" />
     <ClInclude Include="Double_Peashooter.h" />
+    <ClInclude Include="end_draw.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Map_draw.h" />
     <ClInclude Include="Melon.h" />
@@ -148,6 +150,11 @@
     <ClInclude Include="Plant_sow.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potato.h" />
+    <ClInclude Include="round1.h" />
+    <ClInclude Include="round2.h" />
+    <ClInclude Include="round3.h" />
+    <ClInclude Include="Second_count.h" />
+    <ClInclude Include="Start.h" />
     <ClInclude Include="Sunflower.h" />
     <ClInclude Include="Sun.h" />
     <ClInclude Include="Update.h" />

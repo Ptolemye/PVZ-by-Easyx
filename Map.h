@@ -44,6 +44,9 @@ public:
 		if (!in_box(row, col))return 0;
 		return box[row][col];
 	}
+	int get_y(int row) {
+		return start_y + row * WIDTH;
+	}
 	bool is_box_planted(int row,int col) {
 		if (box[row][col] == 0)return false;
 		else return true;

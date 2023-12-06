@@ -8,11 +8,15 @@
 #include"Plant_draw.h"
 #include"Map_draw.h"
 #include"Zombie_draw.h"
+#include"Bullet_draw.h"
 #include"Card_list_draw.h"
 #include"initiallizer.h"
 #include"Mouse_control.h"
 #include"Update.h"
 #include"Timer.h"
+#include"Start.h"
+#include"end_draw.h"
+#include"round1.h"
 Timer timer;
 Map map;
 Player player;
@@ -52,21 +56,41 @@ IMAGE Buckedhead_Zombie::im_zombie2_eating[8];
 IMAGE Buckedhead_Zombie::im_zombie3[6];
 IMAGE Buckedhead_Zombie::im_zombie3_eating[8];
 IMAGE Sun::im_sun;
+IMAGE im_start;
+IMAGE button;
+IMAGE im_txt;
+IMAGE game_lost;
+IMAGE game_win;
+IMAGE head;
+bool lost = false;
+bool win = false;
+bool sow_lock = false;
+int game;
 int card_elected;
+int time_passed;
 Card_list cardlist;
+DWORD start_time;
 using namespace std;
 int main()
 {
+	game = 0;
 	srand((unsigned int)time(NULL));
 	initiallizer();
 	BeginBatchDraw();
 	while (1) {
-		Update();
-		Map_draw();
-		Card_list_draw();
-		Plant_draw();
-		Zombie_draw();
-		Plant_sow(Get_card() + 1);
+		if(game==0)Start();
+		else {
+			if (game == 1)round1();
+			Update();
+			Map_draw();
+			Card_list_draw();
+			Plant_draw();
+			Zombie_draw();
+			bullet_draw();
+			card_elected = Get_card();//改
+			Plant_sow(card_elected);
+			end_draw();
+		}
 		timer.Sleep(10);
 		FlushBatchDraw();
 	}

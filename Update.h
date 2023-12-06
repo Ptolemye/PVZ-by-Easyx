@@ -116,7 +116,33 @@ void Zombie_transform(std::list<T>& obj_list) {
 		else p++;
 	}
 }
-
+//Œ˜πœ’®¡—µƒ∑∂Œß…À∫¶
+void kill_scale(int col, int row) {
+	for (auto& p : zombie_list) {
+		int z_col = map.get_box_col(p.x, p.y);
+		if (p.path == row) {
+			if (z_col >= col && z_col - col <= 2) {
+				p.HP -= 50;
+			}
+		}
+	}
+	for (auto& p : conehead_zombie_list) {
+		int z_col = map.get_box_col(p.x, p.y);
+		if (p.path == row) {
+			if (z_col >= col && z_col - col <= 2) {
+				p.HP -= 50;
+			}
+		}
+	}
+	for (auto& p : bucked_zombie_list) {
+		int z_col = map.get_box_col(p.x, p.y);
+		if (p.path == row) {
+			if (z_col >= col && z_col - col <= 2) {
+				p.HP -= 50;
+			}
+		}
+	}
+}
 void Update() {
 	//œ˚≥˝À¿ÕˆΩ© ¨
 	enemy_clean(zombie_list);
@@ -136,21 +162,21 @@ void Update() {
 		else p1++;
 	}
 	//…˙≥…Ω© ¨
-	static DWORD t1 = GetTickCount();
-	static DWORD t3 = GetTickCount();
-	DWORD t2 = GetTickCount();
-	if (t2-t3>1000&&t2-t1>5000) {
-		int path = rand()%5;
-		Zombie z1(950, start_y + path * WIDTH, path);//start_y + path * WIDTH
-		zombie_list.push_back(z1);
-		path = rand() % 5;
-		Conehead_Zombie z2(950, start_y + path * WIDTH, path);//start_y + path * WIDTH
-		conehead_zombie_list.push_back(z2);
-		path = rand() % 5;
-		Buckedhead_Zombie z3(950, start_y + path * WIDTH, path);//start_y + path * WIDTH
-		bucked_zombie_list.push_back(z3);
-		t1 = t2;
-	}
+	//static DWORD t1 = GetTickCount();
+	//static DWORD t3 = GetTickCount();
+	//DWORD t2 = GetTickCount();
+	//if (t2-t3>1000&&t2-t1>5000) {
+	//	int path = rand()%5;
+	//	Zombie z1(950, start_y + path * WIDTH, path);//start_y + path * WIDTH
+	//	zombie_list.push_back(z1);
+	//	path = rand() % 5;
+	//	Conehead_Zombie z2(950, start_y + path * WIDTH, path);//start_y + path * WIDTH
+	//	conehead_zombie_list.push_back(z2);
+	//	path = rand() % 5;
+	//	Buckedhead_Zombie z3(950, start_y + path * WIDTH, path);//start_y + path * WIDTH
+	//	bucked_zombie_list.push_back(z3);
+	//	t1 = t2;
+	//}
 	Zombie_attack(zombie_list);
 	Zombie_attack(conehead_zombie_list);
 	Zombie_attack(bucked_zombie_list);
@@ -240,17 +266,17 @@ void Update() {
 			p.is_shooting = true;
 			int enemy_x=1000;
 			for (auto& z : zombie_list) {
-				if (z.path == path) {
+				if (z.path == path&&z.x>x&&z.HP>0) {
 					if (z.x < enemy_x)enemy_x = z.x;
 				}
 			}
 			for (auto& z : conehead_zombie_list) {
-				if (z.path == path) {
+				if (z.path == path&&z.x > x && z.HP > 0) {
 					if (z.x < enemy_x)enemy_x = z.x;
 				}
 			}
 			for (auto& z : bucked_zombie_list) {
-				if (z.path == path) {
+				if (z.path == path&& z.x > x && z.HP > 0) {
 					if (z.x < enemy_x)enemy_x = z.x;
 				}
 			}
@@ -297,7 +323,48 @@ void Update() {
 	bullet_hit(pea_list, zombie_list, 30);
 	bullet_hit(pea_list, conehead_zombie_list, 30);
 	bullet_hit(pea_list, bucked_zombie_list, 30);
+	auto m = melon_list.begin();
+	while (m!=melon_list.end())
+	{
+		int m_x = m->x;
+		int m_y = m->y;
+		for (auto& z1 :zombie_list){
+			if (m_x + 35 > z1.x && m_x<z1.x + 60 && m_y + 28>z1.y && m_y < z1.y + 70 && !m->hit_enemy&&z1.path==m->path) {
+				m->hit_enemy = true;
+				z1.HP -= 100;
+				int col = map.get_box_col(z1.x, z1.y);
+				kill_scale(col, z1.path);
+			}
+		}
+		for (auto& z2 : conehead_zombie_list) {
+			if (m_x + 35 > z2.x && m_x<z2.x + 60 && m_y + 28>z2.y && m_y < z2.y + 70 && !m->hit_enemy && z2.path == m->path) {
+				m->hit_enemy = true;
+				z2.HP -= 100;
+				int col = map.get_box_col(z2.x, z2.y);
+				kill_scale(col, z2.path);
+			}
+		}
+		for (auto& z3 : bucked_zombie_list) {
+			if (m_x + 35 > z3.x && m_x<z3.x + 60 && m_y + 28>z3.y && m_y < z3.y + 70 && !m->hit_enemy && z3.path == m->path) {
+				m->hit_enemy = true;
+				z3.HP -= 100;
+				int col = map.get_box_col(z3.x, z3.y);
+				kill_scale(col, z3.path);
+			}
+		}
+		m++;
+	}
 	//Ãÿ ‚Ω© ¨->∆’Õ®Ω© ¨
 	Zombie_transform(conehead_zombie_list);
 	Zombie_transform(bucked_zombie_list);
+	//ºÏ≤‚Ω© ¨ «∑ÒÕª∆∆∑¿œﬂ
+	for (auto& p : zombie_list) {
+		if (p.x <= -20&&!win)lost = true;
+	}
+	for (auto& p : conehead_zombie_list) {
+		if (p.x <= -20 && !win)lost = true;
+	}
+	for (auto& p : bucked_zombie_list) {
+		if (p.x <= -20 && !win)lost = true;
+	}
 }

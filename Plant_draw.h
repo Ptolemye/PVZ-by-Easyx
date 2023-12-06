@@ -25,12 +25,6 @@ void Plant_draw() {
 	for (auto& p : watermelon_list) {
 		p.draw();
 	}
-	for (auto& p : pea_list) {
-		p.draw();
-	}
-	for (auto& p : melon_list) {
-		p.draw();
-	}
 	for (auto& p : sun_list) {
 		p.draw();
 	}

@@ -34,6 +34,8 @@ void Plant_sow(int type) {
 	int y = player.get_mouse_y();
 	int row = map.get_box_row(x, y);
 	int col = map.get_box_col(x, y);
+	
+	//
 	if (!map.is_box_planted(row, col) && map.in_box(row, col)) {
 		if (type == 1)to_plant_draw<Sunflower>(row, col);
 		if (type == 2)to_plant_draw<Peashooter>(row, col);
@@ -44,8 +46,22 @@ void Plant_sow(int type) {
 	}
 	if (type == 8)putimagePng(x-30, y-60, &cardlist.im_sf1[8]);
 	if (player.if_click()) {
+		//拾取阳光
+		auto p = sun_list.begin();
+		while (p != sun_list.end()) {
+			int mouse_x = player.get_mouse_x();
+			int mouse_y = player.get_mouse_y();
+			if (mouse_x > p->x && mouse_x< p->x + 40 && mouse_y > p->y && mouse_y < p->y + 40) {
+				sun_list.erase(p++);
+				player.money += 25;
+				player.fresh_mouse_location();
+				sow_lock = true;
+				card_elected = -1;
+			}
+			else p++;
+		}
 		//确定地图上未被种植，且鼠标在草坪内
-		if (!map.is_box_planted(row, col)&&map.in_box(row,col)) {
+		if (!map.is_box_planted(row, col)&&map.in_box(row,col) && !sow_lock) {
 			//种植向日葵
 			if (type==1&&player.money>=50&&sunflower_function.ready_to_plant) {
 				Plant_help(row, col, 1, sunflower_list);
@@ -89,18 +105,7 @@ void Plant_sow(int type) {
 				if (temp_type == 6)abolish_help(row, col, watermelon_list);
 			}
 		}
-		//拾取阳光
-		auto p = sun_list.begin();
-		while (p != sun_list.end()) {
-			int mouse_x = player.get_mouse_x();
-			int mouse_y = player.get_mouse_y();
-			if (mouse_x > p->x && mouse_x< p->x + 40 && mouse_y > p->y && mouse_y < p->y + 40) {
-				sun_list.erase(p++);
-				player.money += 25;
-				player.fresh_mouse_location();
-			}
-			else p++;
-		}
+		
 	}
 
 }

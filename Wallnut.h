@@ -11,12 +11,12 @@ private:
 public:
 	Wallnut(int row, int col) :Plant(row, col) {
 		type = 3;
-		HP = 1000;
+		HP = 1500;
 		cost = 50;
 		draw_step = 1;
 		ready_to_plant = true;
-		cold_time = 5;
-		cold_count = 5;
+		cold_time = 10;
+		cold_count = 10;
 		draw_t1 = GetTickCount();
 	}
 	//设置图像
@@ -43,9 +43,9 @@ public:
 	//动画效果
 	void draw() {
 		draw_t2 = GetTickCount();
-		if(HP>800)putimagePng(start_x + col * LENGTH, start_y + row * WIDTH, &im_wallnut1[draw_step]);
-		if (HP > 400&&HP<=800)putimagePng(start_x + col * LENGTH+10, start_y + row * WIDTH+10, &im_wallnut2[draw_step]);
-		if (HP <400)putimagePng(start_x + col * LENGTH+10, start_y + row * WIDTH+15, &im_wallnut3[draw_step]);
+		if(HP>1000)putimagePng(start_x + col * LENGTH, start_y + row * WIDTH, &im_wallnut1[draw_step]);
+		if (HP > 500&&HP<=1000)putimagePng(start_x + col * LENGTH+10, start_y + row * WIDTH+10, &im_wallnut2[draw_step]);
+		if (HP <=500)putimagePng(start_x + col * LENGTH+10, start_y + row * WIDTH+15, &im_wallnut3[draw_step]);
 		//动画延时
 		if (draw_t2 - draw_t1 > 150) {
 			draw_step++;
