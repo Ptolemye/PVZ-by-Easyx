@@ -26,7 +26,7 @@ public:
 		TCHAR filename[40];
 		for (int i = 1; i < 4; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Pea\\pea%d.png"), i);
+			_stprintf_s(filename, _T("image\\Pea\\pea%d.png"), i);
 			loadimage(&im_pea[i], filename);
 		}
 	}

@@ -36,27 +36,27 @@ public:
 		TCHAR filename[100];
 		for (int i = 1; i < 6; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Zombie\\state1\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Zombie\\state1\\image%d.png"), i);
 			loadimage(&im_zombie1[i], filename);
 		}
 		for (int i = 1; i < 8; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Zombie\\state1_eating\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Zombie\\state1_eating\\image%d.png"), i);
 			loadimage(&im_zombie1_eating[i], filename);
 		}
 		for (int i = 1; i < 6; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Zombie\\state2\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Zombie\\state2\\image%d.png"), i);
 			loadimage(&im_zombie2[i], filename);
 		}
 		for (int i = 1; i < 8; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Zombie\\state2_eating\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Zombie\\state2_eating\\image%d.png"), i);
 			loadimage(&im_zombie2_eating[i], filename);
 		}
 		for (int i = 1; i < 14; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Zombie\\state3\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Zombie\\state3\\image%d.png"), i);
 			loadimage(&im_zombie3[i], filename);
 		}
 	}

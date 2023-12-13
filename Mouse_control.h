@@ -21,8 +21,7 @@ int Get_card() {
 			if (result > 1 && result != 8)result = -1;
 		}
 	}
-	if (lost)result = -1;
-	if (sow_lock)result = -1;
+	if (lost||win)result = -1;
 	return result;
 }
 

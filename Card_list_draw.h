@@ -20,9 +20,9 @@ void Card_list_draw() {
 	Card_list_draw_help(5, potato_function);
 	Card_list_draw_help(6, watermelon_function);
 	//款选模块(改)
-	if (card_elected >= 0) {
-		setlinecolor(WHITE);
-		rectangle(70 * card_elected, 2,70 * (card_elected + 1), 72);
+	if (Get_card() >= 0) {
+			setlinecolor(WHITE);
+			rectangle(70 * Get_card(), 2, 70 * (Get_card() + 1), 72);
 	}
 
 }

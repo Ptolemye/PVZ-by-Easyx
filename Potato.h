@@ -17,10 +17,10 @@ public:
 	int boom_step = 1;
 	Potato(int row, int col) :Plant(row, col) {
 		type = 5;
-		HP = 100;
+		HP = 200;
 		cost = 25;
-		cold_time = 5;
-		cold_count = 5;
+		cold_time = 20;
+		cold_count = 20;
 		ready_to_plant = true;
 		draw_step = 1;
 		draw_t1 = GetTickCount();

@@ -118,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,7 +129,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="initiallizer.h" />
-    <ClCompile Include="PVZ.cpp" />
+    <ClCompile Include="PVZ.cpp">
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MultiThreaded</RuntimeLibrary>
+    </ClCompile>
     <ClCompile Include="Watermelon.h" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +142,7 @@
     <ClInclude Include="Conehead_Zombie.h" />
     <ClInclude Include="Double_Peashooter.h" />
     <ClInclude Include="end_draw.h" />
+    <ClInclude Include="Konw.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Map_draw.h" />
     <ClInclude Include="Melon.h" />

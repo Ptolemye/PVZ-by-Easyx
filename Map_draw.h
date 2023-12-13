@@ -20,7 +20,9 @@ void Map_draw() {
 	fillrectangle(770, 510, 940, 530);
 	setlinecolor(GREEN);
 	setfillcolor(GREEN);
-	double unit = (940.0- 770.0) / 180.0;
+	double unit=0;
+	if(game==1)unit = (940.0 - 770.0) / 180.0;
+	if(game==2)unit = (940.0 - 770.0) / 240.0;
 	int longth = unit * second_count();
 	fillrectangle(770, 510, 770 + longth, 530);
 	putimagePng(765+longth, 505, &head);

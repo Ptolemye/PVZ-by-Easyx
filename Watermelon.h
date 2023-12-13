@@ -13,10 +13,10 @@ public:
 	bool reload_once = true;
 	Watermelon(int row, int col) :Plant(row, col) {
 		type = 1;
-		HP = 100;
+		HP = 300;
 		cost = 300;
-		cold_time = 5;
-		cold_count = 5;
+		cold_time = 10;
+		cold_count = 10;
 		ready_to_plant = true;
 		draw_step = 1;
 		draw_t1 = GetTickCount();
@@ -26,10 +26,10 @@ public:
 		TCHAR filename[50];
 		for (int i = 1; i < 14; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Watermelon\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Watermelon\\image%d.png"), i);
 			loadimage(&im_watermelon[i], filename);
 		}
-		_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Watermelon\\to_plant.png"));
+		_stprintf_s(filename, _T("image\\Watermelon\\to_plant.png"));
 		loadimage(&to_plant, filename);
 	}
 	//¶¯»­Ð§¹û

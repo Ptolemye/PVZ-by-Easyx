@@ -16,5 +16,7 @@ inline void initiallizer() {
 	loadimage(&game_lost, _T("image\\Map\\end.png"));
 	loadimage(&head, _T("image\\Map\\head.png"));
 	loadimage(&game_win, _T("image\\Map\\success.png"));
+	loadimage(&button1, _T("image\\Map\\button2.png"));
+	loadimage(&konw, _T("image\\Map\\konw.png"));
 }
 #endif

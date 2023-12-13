@@ -15,8 +15,8 @@ public:
 		cost = 50;
 		draw_step = 1;
 		ready_to_plant = true;
-		cold_time = 10;
-		cold_count = 10;
+		cold_time = 30;
+		cold_count = 30;
 		draw_t1 = GetTickCount();
 	}
 	//设置图像
@@ -24,20 +24,20 @@ public:
 		TCHAR filename[80];
 		for (int i = 1; i < 6; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Wallnut\\state1\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Wallnut\\state1\\image%d.png"), i);
 			loadimage(&im_wallnut1[i], filename);
 		}
 		for (int i = 1; i < 6; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Wallnut\\state2\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Wallnut\\state2\\image%d.png"), i);
 			loadimage(&im_wallnut2[i], filename);
 		}
 		for (int i = 1; i < 6; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Wallnut\\state3\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Wallnut\\state3\\image%d.png"), i);
 			loadimage(&im_wallnut3[i], filename);
 		}
-		_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Wallnut\\to_plant.png"));
+		_stprintf_s(filename, _T("image\\Wallnut\\to_plant.png"));
 		loadimage(&to_plant, filename);
 	}
 	//动画效果

@@ -25,10 +25,10 @@ public:
 		TCHAR filename[40];
 		for (int i = 1; i < 9; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Sunflower\\SF%d.png"), i);
+			_stprintf_s(filename, _T("image\\Sunflower\\SF%d.png"), i);
 			loadimage(&im_sunflower[i], filename);
 		}
-		_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Sunflower\\to_plant.png"));
+		_stprintf_s(filename, _T("image\\Sunflower\\to_plant.png"));
 		loadimage(&to_plant, filename);
 	}
 	//动画效果
@@ -48,7 +48,7 @@ public:
 	//生产阳光
 	bool produce_sun() {
 		produce_t2 = GetTickCount();
-		if (produce_t2 - produce_t1 > 13000) {
+		if (produce_t2 - produce_t1 > 15000) {
 			produce_t1 = produce_t2;
 			return true;
 		}

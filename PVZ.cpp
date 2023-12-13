@@ -17,6 +17,9 @@
 #include"Start.h"
 #include"end_draw.h"
 #include"round1.h"
+#include"round2.h"
+#include"round3.h"
+#include"Konw.h"
 Timer timer;
 Map map;
 Player player;
@@ -57,6 +60,8 @@ IMAGE Buckedhead_Zombie::im_zombie3[6];
 IMAGE Buckedhead_Zombie::im_zombie3_eating[8];
 IMAGE Sun::im_sun;
 IMAGE im_start;
+IMAGE button1;
+IMAGE konw;
 IMAGE button;
 IMAGE im_txt;
 IMAGE game_lost;
@@ -79,16 +84,24 @@ int main()
 	BeginBatchDraw();
 	while (1) {
 		if(game==0)Start();
+		else if (game == -1)Konw();
 		else {
 			if (game == 1)round1();
+			if (game == 2)round2();
 			Update();
 			Map_draw();
+			if (game == 3)round3();
 			Card_list_draw();
 			Plant_draw();
 			Zombie_draw();
 			bullet_draw();
-			card_elected = Get_card();//改
-			Plant_sow(card_elected);
+			if (game == 3) {
+				card_elected=rand() % 5;
+			}
+			else {
+				card_elected = Get_card();//改
+			}
+			Plant_sow(Get_card());
 			end_draw();
 		}
 		timer.Sleep(10);

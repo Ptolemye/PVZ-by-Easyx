@@ -90,6 +90,8 @@ void round1() {
 	}
 	if (second_count() >= 180) {
 		win = true;
+		lock1 = false;
+		lock2 = false;
 		for (auto& p : zombie_list) {
 			win = false;
 		}

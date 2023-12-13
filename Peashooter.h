@@ -28,12 +28,12 @@ public:
 		TCHAR filename[80];
 		for (int i = 1; i < 9; i++)
 		{
-			_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Peashooter\\image%d.png"), i);
+			_stprintf_s(filename, _T("image\\Peashooter\\image%d.png"), i);
 			loadimage(&im_peashooter[i], filename);
 		}
-		loadimage(&im_peashooter[9], _T("D:\\PVZ\\PVZ\\image\\Peashooter\\shoot1.png"));
-		loadimage(&im_peashooter[10], _T("D:\\PVZ\\PVZ\\image\\Peashooter\\shoot2.png"));
-		_stprintf_s(filename, _T("D:\\PVZ\\PVZ\\image\\Peashooter\\to_plant.png"));
+		loadimage(&im_peashooter[9], _T("image\\Peashooter\\shoot1.png"));
+		loadimage(&im_peashooter[10], _T("image\\Peashooter\\shoot2.png"));
+		_stprintf_s(filename, _T("image\\Peashooter\\to_plant.png"));
 		loadimage(&to_plant, filename);
 	}
 	//动画效果
@@ -41,7 +41,7 @@ public:
 		draw_t2 = GetTickCount();
 		putimagePng(start_x + col * LENGTH, start_y + row * WIDTH, &im_peashooter[draw_step]);
 		//动画延时
-		if (draw_t2 - draw_t1 > 150) {
+		if (draw_t2 - draw_t1 > 200) {
 			draw_step++;
 			draw_t1 = draw_t2;
 		}

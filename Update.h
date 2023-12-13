@@ -122,7 +122,7 @@ void kill_scale(int col, int row) {
 		int z_col = map.get_box_col(p.x, p.y);
 		if (p.path == row) {
 			if (z_col >= col && z_col - col <= 2) {
-				p.HP -= 50;
+				p.HP -= 30;
 			}
 		}
 	}
@@ -130,7 +130,7 @@ void kill_scale(int col, int row) {
 		int z_col = map.get_box_col(p.x, p.y);
 		if (p.path == row) {
 			if (z_col >= col && z_col - col <= 2) {
-				p.HP -= 50;
+				p.HP -= 30;
 			}
 		}
 	}
@@ -138,7 +138,7 @@ void kill_scale(int col, int row) {
 		int z_col = map.get_box_col(p.x, p.y);
 		if (p.path == row) {
 			if (z_col >= col && z_col - col <= 2) {
-				p.HP -= 50;
+				p.HP -= 30;
 			}
 		}
 	}
@@ -227,7 +227,7 @@ void Update() {
 			{
 				z_row = map.get_box_row(z1->x, z1->y);
 				z_col= map.get_box_col(z1->x, z1->y);
-				if (z_row == row && z_col == col) {
+				if (z_row == row &&( z_col == col||z_col+1==col)) {
 					p.is_boom = true;
 					zombie_list.erase(z1++);
 				}
@@ -238,7 +238,7 @@ void Update() {
 			{
 				z_row = map.get_box_row(z2->x, z2->y);
 				z_col = map.get_box_col(z2->x, z2->y);
-				if (z_row == row && z_col == col) {
+				if (z_row == row && (z_col == col || z_col + 1 == col)) {
 					p.is_boom = true;
 					conehead_zombie_list.erase(z2++);
 				}
@@ -249,7 +249,7 @@ void Update() {
 			{
 				z_row = map.get_box_row(z3->x, z3->y);
 				z_col = map.get_box_col(z3->x, z3->y);
-				if (z_row == row && z_col == col) {
+				if (z_row == row && (z_col == col || z_col + 1 == col)) {
 					p.is_boom = true;
 					bucked_zombie_list.erase(z3++);
 				}
@@ -331,7 +331,7 @@ void Update() {
 		for (auto& z1 :zombie_list){
 			if (m_x + 35 > z1.x && m_x<z1.x + 60 && m_y + 28>z1.y && m_y < z1.y + 70 && !m->hit_enemy&&z1.path==m->path) {
 				m->hit_enemy = true;
-				z1.HP -= 100;
+				z1.HP -= 90;
 				int col = map.get_box_col(z1.x, z1.y);
 				kill_scale(col, z1.path);
 			}
@@ -339,7 +339,7 @@ void Update() {
 		for (auto& z2 : conehead_zombie_list) {
 			if (m_x + 35 > z2.x && m_x<z2.x + 60 && m_y + 28>z2.y && m_y < z2.y + 70 && !m->hit_enemy && z2.path == m->path) {
 				m->hit_enemy = true;
-				z2.HP -= 100;
+				z2.HP -= 90;
 				int col = map.get_box_col(z2.x, z2.y);
 				kill_scale(col, z2.path);
 			}
@@ -347,7 +347,7 @@ void Update() {
 		for (auto& z3 : bucked_zombie_list) {
 			if (m_x + 35 > z3.x && m_x<z3.x + 60 && m_y + 28>z3.y && m_y < z3.y + 70 && !m->hit_enemy && z3.path == m->path) {
 				m->hit_enemy = true;
-				z3.HP -= 100;
+				z3.HP -= 90;
 				int col = map.get_box_col(z3.x, z3.y);
 				kill_scale(col, z3.path);
 			}

@@ -14,10 +14,10 @@ public:
 	bool reload_over = false;
 	Double_Peashooter(int row, int col) :Plant(row, col) {
 		type = 4;
-		HP = 100;
+		HP = 200;
 		draw_step = 1;
-		cold_count = 1;
-		cold_time = 1;
+		cold_count = 10;
+		cold_time = 10;
 		ready_to_plant = true;
 		cost = 200;
 		draw_t1 = GetTickCount();
@@ -41,7 +41,7 @@ public:
 		draw_t2 = GetTickCount();
 		putimagePng(start_x + col * LENGTH, start_y + row * WIDTH, &im_peashooter[draw_step]);
 		//¶¯»­ÑÓÊ±
-		if (draw_t2 - draw_t1 > 150) {
+		if (draw_t2 - draw_t1 > 200) {
 			draw_step++;
 			draw_t1 = draw_t2;
 		}

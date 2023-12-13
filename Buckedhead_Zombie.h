@@ -82,7 +82,7 @@ public:
 		//¶¯»­ÑÓÊ±
 		if (draw_t2 - draw_t1 > 200) {
 			if (!if_eating || HP <= 0) {
-				x -= 4;
+				x -= 2;
 				draw_step++;
 			}
 			else draw_step_eating++;
